@@ -1,6 +1,4 @@
-/* ===============================
-   WRAPPER
-=================================*/
+/* Wrapper */
 .verify-wrapper {
   min-height: 75vh;
   background-color: #f2f2f2;
@@ -10,23 +8,22 @@
   align-items: center;
   font-family: 'Cambria', 'Times New Roman', serif;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 /* Page title */
 .verify-page-title {
-  font-size: 36px;
+  font-size: 40px;
   color: #003366;
-  margin-bottom: 50px;
+  margin-bottom: 65px;
   font-weight: 600;
   text-align: center;
 }
 
-/* Card */
+/* White card for input and profile */
 .verify-card,
 .profile-card {
   background: #ffffff;
-  padding: 35px 25px;
+  padding: 45px 35px;
   width: 100%;
   max-width: 420px;
   text-align: center;
@@ -34,7 +31,6 @@
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  box-sizing: border-box;
 }
 
 /* Inputs row */
@@ -42,19 +38,17 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
-  gap: 8px;
-  flex-wrap: wrap;
 }
 
 /* Input boxes */
 .verify-inputs input {
-  flex: 1 1 45px;
-  max-width: 50px;
-  height: 50px;
-  font-size: 20px;
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
   text-align: center;
   border: 1px solid #999;
   outline: none;
+  font-family: 'Cambria', 'Times New Roman', serif;
   border-radius: 6px;
   transition: all 0.2s ease;
 }
@@ -145,19 +139,14 @@
 
   .verify-card,
   .profile-card {
-    margin: 0 10px;
-    padding: 25px 15px;
-  }
-
-  .verify-inputs {
-    gap: 6px;
+    margin: 0 15px;
+    padding: 35px 20px;
   }
 
   .verify-inputs input {
-    flex: 1 1 35px;
-    max-width: 40px;
+    width: 40px;
     height: 40px;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .profile-pic {
@@ -171,39 +160,7 @@
   }
 
   .verify-page-title {
-    font-size: 28px;
-    margin-bottom: 40px;
-  }
-
-  .submit-btn {
-    padding: 10px;
-    font-size: 15px;
-  }
-}
-.verify-inputs input {
-  flex: 1 1 50px; /* bigger touch area */
-  max-width: 50px;
-  height: 50px;
-  font-size: 20px;
-  text-align: center;
-  border: 1px solid #999;
-  outline: none;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-}
-
-/* Focus style */
-.verify-inputs input:focus {
-  border: 2px solid #003366;
-  box-shadow: 0 0 5px rgba(0, 51, 102, 0.3);
-}
-
-/* Mobile responsiveness */
-@media screen and (max-width: 480px) {
-  .verify-inputs input {
-    flex: 1 1 40px;
-    max-width: 45px;
-    height: 45px;
-    font-size: 18px;
+    font-size: 32px;
+    margin-bottom: 50px;
   }
 }
