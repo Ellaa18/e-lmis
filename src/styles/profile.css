@@ -1,25 +1,28 @@
 /* ============================= */
 /* MAIN WRAPPER */
 /* ============================= */
-
 .profile-wrapper {
   min-height: 100vh;
   background: linear-gradient(135deg, #eaf4ff, #ffffff);
   font-family: 'Cambria', 'Times New Roman', serif;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  padding-bottom: 40px;
 }
 
 /* ============================= */
 /* TOP BIG IMAGE SLIDER */
 /* ============================= */
-
 .top-slider {
   position: relative;
   width: 100%;
+  max-width: 900px;
   height: 520px;
   overflow: hidden;
   background: #000;
+  border-radius: 15px;
+  margin-top: 20px;
 }
 
 .top-slide-image {
@@ -50,17 +53,40 @@
 }
 
 .arrow.left {
-  left: 25px;
+  left: 15px;
 }
 
 .arrow.right {
-  right: 25px;
+  right: 15px;
+}
+
+/* SLIDE INDICATORS */
+.slide-indicators {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background-color: #ffffff;
 }
 
 /* ============================= */
 /* PROFILE CONTENT SECTION */
 /* ============================= */
-
 .profile-content {
   max-width: 750px;
   width: 90%;
@@ -93,7 +119,6 @@
 /* ============================= */
 /* STATUS BADGE */
 /* ============================= */
-
 .big-status {
   display: inline-block;
   font-size: 26px;
@@ -105,21 +130,18 @@
   text-transform: uppercase;
 }
 
-/* ACCEPTED */
 .big-status.accepted {
   background-color: #e6f4ea;
   color: #28a745;
   border: 2px solid #28a745;
 }
 
-/* DECLINED */
 .big-status.declined {
   background-color: #fce6e6;
   color: #dc3545;
   border: 2px solid #dc3545;
 }
 
-/* PENDING */
 .big-status.pending {
   background-color: #fff4e6;
   color: #ff9800;
@@ -128,8 +150,6 @@
 
 /* ============================= */
 /* PROFILE DETAILS */
-/* ============================= */
-
 .profile-details {
   font-size: 18px;
   color: #333;
@@ -142,8 +162,6 @@
 
 /* ============================= */
 /* EXIT BUTTON */
-/* ============================= */
-
 .exit-btn {
   padding: 14px 40px;
   background-color: #003366;
@@ -162,8 +180,6 @@
 
 /* ============================= */
 /* RESPONSIVE DESIGN */
-/* ============================= */
-
 @media (max-width: 992px) {
   .top-slider {
     height: 420px;

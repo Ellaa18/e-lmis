@@ -7,6 +7,7 @@ export default function ProfilePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
+  // Load user from localStorage
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     if (!currentUser) {
@@ -18,6 +19,7 @@ export default function ProfilePage() {
 
   if (!user) return null;
 
+  // Slider functions
   const nextSlide = () => {
     if (!user.documents || user.documents.length === 0) return;
     setCurrentSlide((prev) => (prev + 1) % user.documents.length);
@@ -31,7 +33,7 @@ export default function ProfilePage() {
   return (
     <div className="profile-wrapper">
 
-      {/* BIG SLIDER AT TOP */}
+      {/* DOCUMENT SLIDER */}
       {user.documents && user.documents.length > 0 && (
         <div className="top-slider">
           <button className="arrow left" onClick={prevSlide}>
@@ -40,13 +42,24 @@ export default function ProfilePage() {
 
           <img
             src={user.documents[currentSlide]}
-            alt="document"
+            alt={`document-${currentSlide + 1}`}
             className="top-slide-image"
           />
 
           <button className="arrow right" onClick={nextSlide}>
             &#10095;
           </button>
+
+          {/* Slide indicators */}
+          <div className="slide-indicators">
+            {user.documents.map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${currentSlide === index ? "active" : ""}`}
+                onClick={() => setCurrentSlide(index)}
+              ></span>
+            ))}
+          </div>
         </div>
       )}
 
