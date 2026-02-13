@@ -7,7 +7,6 @@ export default function ProfilePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
 
-  // Load user from localStorage
   useEffect(() => {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     if (!currentUser) {
@@ -19,7 +18,6 @@ export default function ProfilePage() {
 
   if (!user) return null;
 
-  // Slider functions
   const nextSlide = () => {
     if (!user.documents || user.documents.length === 0) return;
     setCurrentSlide((prev) => (prev + 1) % user.documents.length);
@@ -34,38 +32,32 @@ export default function ProfilePage() {
     <div className="profile-wrapper">
 
       {/* DOCUMENT SLIDER */}
-      {user.documents && user.documents.length > 0 && (
+      {user.documents && user.documents.length > 0 ? (
         <div className="top-slider">
-          <button className="arrow left" onClick={prevSlide}>
-            &#10094;
-          </button>
-
+          <button className="arrow left" onClick={prevSlide}>&#10094;</button>
           <img
             src={user.documents[currentSlide]}
             alt={`document-${currentSlide + 1}`}
             className="top-slide-image"
           />
+          <button className="arrow right" onClick={nextSlide}>&#10095;</button>
 
-          <button className="arrow right" onClick={nextSlide}>
-            &#10095;
-          </button>
-
-          {/* Slide indicators */}
           <div className="slide-indicators">
             {user.documents.map((_, index) => (
               <span
                 key={index}
                 className={`dot ${currentSlide === index ? "active" : ""}`}
                 onClick={() => setCurrentSlide(index)}
-              ></span>
+              />
             ))}
           </div>
         </div>
+      ) : (
+        <div className="no-docs">No documents uploaded</div>
       )}
 
       {/* PROFILE CONTENT */}
       <div className="profile-content">
-
         {user.photo && (
           <img src={user.photo} alt="Profile" className="profile-avatar" />
         )}
@@ -83,8 +75,8 @@ export default function ProfilePage() {
         </div>
 
         <div className="profile-details">
-          <p><strong>Phone:</strong> {user.phone}</p>
-          <p><strong>Email:</strong> {user.email}</p>
+          <p><strong>Phone:</strong> {user.phone || "N/A"}</p>
+          <p><strong>Email:</strong> {user.email || "N/A"}</p>
         </div>
 
         <button className="exit-btn" onClick={() => navigate("/verify")}>
