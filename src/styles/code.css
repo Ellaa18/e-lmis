@@ -1,0 +1,166 @@
+/* Wrapper */
+.verify-wrapper {
+  min-height: 75vh;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Cambria', 'Times New Roman', serif;
+  padding: 20px;
+}
+
+/* Page title */
+.verify-page-title {
+  font-size: 40px;
+  color: #003366;
+  margin-bottom: 65px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* White card for input and profile */
+.verify-card,
+.profile-card {
+  background: #ffffff;
+  padding: 45px 35px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Inputs row */
+.verify-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+/* Input boxes */
+.verify-inputs input {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #999;
+  outline: none;
+  font-family: 'Cambria', 'Times New Roman', serif;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.verify-inputs input:focus {
+  border: 2px solid #003366;
+  box-shadow: 0 0 5px rgba(0, 51, 102, 0.3);
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #074c91;
+  color: #ffffff;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #002244;
+}
+
+/* Error text */
+.error-text {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* Profile Card */
+.profile-card h3 {
+  color: #003366;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #003366;
+  margin-bottom: 15px;
+}
+
+/* Profile details */
+.profile-card p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #333;
+}
+
+/* Document gallery */
+.document-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.doc-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: transform 0.2s ease;
+}
+
+.doc-img:hover {
+  transform: scale(1.1);
+  border-color: #003366;
+}
+
+/* Logout / try another code button */
+.profile-card .submit-btn {
+  margin-top: 20px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 480px) {
+
+  .verify-card,
+  .profile-card {
+    margin: 0 15px;
+    padding: 35px 20px;
+  }
+
+  .verify-inputs input {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .doc-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .verify-page-title {
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+}

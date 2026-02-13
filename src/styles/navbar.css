@@ -1,0 +1,61 @@
+.navbar {
+  width: 100%;
+  background-color: #003366;
+  padding: 10px 0;
+}
+
+.navbar-container {
+  width: 90%;
+  margin: 0 auto;           /* center horizontally */
+  display: flex;
+  align-items: center;      /* vertical alignment */
+  justify-content: space-between;
+  height: 70px;             /* set navbar height */
+}
+
+.logo {
+  height: 50px;             /* bigger logo */
+  display: block;
+  padding: 10px 0;
+ align-items: center; 
+  width: 30%;
+   margin: 0 auto; 
+  
+  
+}
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  color: white;
+  font-weight: 500;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+.nav-links li:hover {
+  color: #ffcc00;
+}
+
+.register-btn {
+  background-color: #ffcc00;
+  color: black;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+.navbar {
+  width: 100%;
+  background-color: #fafbfc;
+  padding: 10px 0;
+  position: fixed;   /* stick to top */
+  top: 0;
+  left: 0;
+  z-index: 1000;    /* above everything else */
+}

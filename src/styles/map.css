@@ -1,0 +1,38 @@
+.map-section {
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  color: #003366;
+  font-weight: 600;
+  margin-bottom: 30px; /* space between title and map */
+}
+
+.map-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto; /* center horizontally */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25); /* nice shadow for map */
+}
+
+.map-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .map-container {
+    max-width: 95%;
+  }
+}
