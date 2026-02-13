@@ -170,3 +170,30 @@
 .add-doc-btn:hover {
   background-color: #0056b3;
 }
+@media (max-width: 768px) {
+
+  .admin-card {
+    padding: 20px;
+  }
+
+  .admin-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-buttons button {
+    width: 100%;
+  }
+
+  .admin-slider {
+    height: 300px;
+  }
+
+}
+.admin-slide-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+

@@ -131,3 +131,30 @@
   .read-more { padding: 5px 12px; font-size: 0.9rem; }
   .prev, .next { font-size: 1.5rem; padding: 7px 12px; }
 }
+@media (max-width: 768px) {
+
+  .slide-text {
+    font-size: 18px !important;
+    padding: 0 15px;
+    text-align: center;
+  }
+
+  .slide-text h1,
+  .slide-text h2 {
+    font-size: 20px !important;
+  }
+
+  .slide-text p {
+    font-size: 14px !important;
+  }
+
+  .read-more-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .slider-container {
+    height: 300px !important;
+  }
+
+}
