@@ -1,199 +1,255 @@
+/* ===============================
+   SECTION
+=================================*/
+
 .admin-section {
-  padding: 40px 20px;
-  background-color: #f0f2f5;
-  min-height: 80vh;
+  padding: 20px 15px;
+  background: #f4f6f9;
+  min-height: 100vh;
 }
 
 .admin-container {
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .admin-title {
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 2em;
+  font-size: 1.8rem;
   color: #003366;
+  margin-bottom: 25px;
 }
 
+/* ===============================
+   FORM
+=================================*/
+
 .admin-form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 35px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 40px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .form-group label {
-  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
   margin-bottom: 5px;
-  font-weight: 500;
+  display: block;
 }
 
 .form-group input {
+  width: 100%;
   padding: 10px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  width: 100%;
 }
 
 .admin-btn {
   padding: 12px;
   font-size: 1rem;
   font-weight: 600;
-  background-color: #003366;
+  background: #003366;
   color: white;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.3s;
 }
-.admin-btn:hover { background-color: #0055aa; }
+
+.admin-btn:hover {
+  background: #0055aa;
+}
+
+/* ===============================
+   USERS LIST
+=================================*/
 
 .admin-users h3 {
   margin-bottom: 20px;
   color: #003366;
 }
 
+/* USER CARD */
 .user-card {
-  background: #fff;
+  background: white;
+  border-radius: 12px;
   padding: 20px;
-  border-radius: 10px;
   margin-bottom: 25px;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .profile-pic {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 10px;
 }
 
-.user-actions {
-  margin-top: 15px;
-  display: flex;
-  gap: 10px;
+.user-card p {
+  font-size: 0.9rem;
+  margin: 4px 0;
 }
 
-.accept-btn, .decline-btn {
-  padding: 8px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 500;
-}
+/* ===============================
+   DOCUMENT SLIDER
+=================================*/
 
-.accept-btn { background-color: #28a745; color: white; }
-.accept-btn:hover { background-color: #218838; }
-
-.decline-btn { background-color: #dc3545; color: white; }
-.decline-btn:hover { background-color: #c82333; }
-
-/* Document slider */
 .document-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-top: 15px;
+  text-align: center;
   position: relative;
 }
 
 .document-preview {
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  max-width: 220px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin: 0 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
 .slide-btn {
-  font-size: 1.5rem;
-  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.6);
   color: white;
   border: none;
+  padding: 6px 10px;
   border-radius: 5px;
-  padding: 5px 10px;
   cursor: pointer;
 }
-.slide-btn:hover { background: rgba(0,0,0,0.8); }
+
+.slide-btn.left {
+  left: 5px;
+}
+
+.slide-btn.right {
+  right: 5px;
+}
+
+.slide-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
 
 .slider-remove {
-  position: absolute;
-  bottom: -30px;
+  margin-top: 10px;
 }
+
 .slider-remove button {
-  padding: 5px 10px;
   background: #dc3545;
   color: white;
   border: none;
-  border-radius: 5px;
+  padding: 6px 10px;
+  border-radius: 6px;
   cursor: pointer;
 }
-.slider-remove button:hover { background: #c82333; }
-/* Edit/Delete Buttons */
-.edit-btn, .delete-btn {
+
+.slider-remove button:hover {
+  background: #c82333;
+}
+
+.add-doc-btn {
+  display: inline-block;
+  margin-top: 12px;
   padding: 8px 12px;
-  font-weight: 500;
+  background: #007bff;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.add-doc-btn:hover {
+  background: #0056b3;
+}
+
+/* ===============================
+   ACTION BUTTONS
+=================================*/
+
+.user-actions {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;   /* MOBILE FIRST */
+  gap: 8px;
+}
+
+.user-actions button {
+  width: 100%;
+  padding: 8px;
+  font-weight: 600;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
-.edit-btn {
-  background-color: #ffc107;
+/* Button Colors */
+
+.accept-btn {
+  background: #28a745;
   color: white;
 }
-.edit-btn:hover { background-color: #e0a800; }
+.accept-btn:hover {
+  background: #218838;
+}
+
+.decline-btn {
+  background: #dc3545;
+  color: white;
+}
+.decline-btn:hover {
+  background: #c82333;
+}
+
+.edit-btn {
+  background: #ffc107;
+  color: white;
+}
+.edit-btn:hover {
+  background: #e0a800;
+}
 
 .delete-btn {
-  background-color: #6c757d;
+  background: #6c757d;
   color: white;
 }
-.delete-btn:hover { background-color: #5a6268; }
-/* Add Picture Button on Slider */
-.add-doc-btn {
-  display: inline-block;
-  padding: 6px 12px;
-  background-color: #007bff;
-  color: white;
-  font-weight: 500;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 10px;
+.delete-btn:hover {
+  background: #5a6268;
 }
-.add-doc-btn:hover {
-  background-color: #0056b3;
-}
-@media (max-width: 768px) {
 
-  .admin-card {
-    padding: 20px;
+/* ===============================
+   DESKTOP IMPROVEMENT
+=================================*/
+
+@media (min-width: 768px) {
+
+  .admin-title {
+    font-size: 2.2rem;
   }
 
-  .admin-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  .user-actions {
+    flex-direction: row;  /* horizontal on desktop */
+    flex-wrap: wrap;
   }
 
-  .admin-buttons button {
-    width: 100%;
+  .user-actions button {
+    width: auto;
+    flex: 1;
   }
 
-  .admin-slider {
-    height: 300px;
+  .document-preview {
+    max-width: 260px;
+    height: 260px;
   }
 
 }
-.admin-slide-image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
