@@ -180,3 +180,30 @@
     font-size: 15px;
   }
 }
+.verify-inputs input {
+  flex: 1 1 50px; /* bigger touch area */
+  max-width: 50px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  outline: none;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+/* Focus style */
+.verify-inputs input:focus {
+  border: 2px solid #003366;
+  box-shadow: 0 0 5px rgba(0, 51, 102, 0.3);
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 480px) {
+  .verify-inputs input {
+    flex: 1 1 40px;
+    max-width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+}

@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/code.css";
 
 export default function CodeVerification() {
   const [code, setCode] = useState(["", "", "", "", "", ""]);
   const [error, setError] = useState("");
-  const navigate = useNavigate(); // for page navigation
+  const navigate = useNavigate();
+  const inputRefs = useRef([]);
 
   const handleChange = (value, index) => {
     if (!/^[0-9]?$/.test(value)) return;
@@ -14,14 +15,14 @@ export default function CodeVerification() {
     newCode[index] = value;
     setCode(newCode);
 
+    // Focus next input on mobile and desktop
     if (value && index < 5) {
-      document.getElementById(`code-${index + 1}`).focus();
+      inputRefs.current[index + 1].focus();
     }
   };
 
   const handleSubmit = () => {
     const fullCode = code.join("");
-
     if (fullCode.length !== 6) {
       setError("Please enter a valid 6-digit code.");
       return;
@@ -32,7 +33,6 @@ export default function CodeVerification() {
 
     if (matchedUser) {
       setError("");
-      // Save matched user to localStorage to show on profile page
       localStorage.setItem("currentUser", JSON.stringify(matchedUser));
       navigate("/profile"); // redirect to Profile Page
     } else {
@@ -48,11 +48,14 @@ export default function CodeVerification() {
           {code.map((digit, index) => (
             <input
               key={index}
-              id={`code-${index}`}
+              ref={(el) => (inputRefs.current[index] = el)}
               type="text"
+              inputMode="numeric"        // show number keyboard on mobile
+              pattern="[0-9]*"
               value={digit}
               maxLength="1"
-              onChange={(e) => handleChange(e.target.value, index)}
+              onInput={(e) => handleChange(e.target.value, index)} // use onInput for mobile
+              autoComplete="one-time-code"
             />
           ))}
         </div>
