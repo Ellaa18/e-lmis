@@ -10,11 +10,11 @@ const faqs = [
   },
   {
     question: "-What is Differentiation in Zoning and Training Fields?",
-    answer: "Training Areas Differentiation",
+    answer: "Differentiation in the context of zoning and training fields refers to the systematic division of training areas, exercises, or programs based on specific criteria to optimize performance, safety, and development. It’s about customizing the environment, intensity, or focus of training according to the needs, goals, or abilities of individuals or groups",
   },
   {
     question: "-Training Areas Differentiation?",
-    answer: "Training Areas Differentiation",
+    answer: "Training areas differentiation refers to the strategic division of training spaces and exercises to suit the specific needs, skills, and roles of athletes or participants. It ensures that training is safe, effective, and targeted, allowing individuals or groups to focus on their development without interference or inefficiency.",
   },
 ];
 

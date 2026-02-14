@@ -15,7 +15,7 @@
   position: relative;
   width: 100%;
   max-width: 900px;
-  height: 520px;
+  height: 450px; /* reduced height to make it a bit smaller */
   overflow: hidden;
   background: #000;
   border-radius: 15px;
@@ -25,8 +25,9 @@
 .top-slide-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* show full image without cropping */
   transition: opacity 0.4s ease-in-out;
+  background-color: #000; /* fill empty space */
 }
 
 /* ARROWS */
@@ -136,7 +137,8 @@
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-  .top-slider { height: 350px; }
+  .top-slider { height: 300px; }
+  .top-slide-image { object-fit: contain; }
   .profile-content { padding: 40px 25px; }
   .profile-avatar { width: 130px; height: 130px; }
   .profile-name { font-size: 26px; }
@@ -144,7 +146,8 @@
 }
 
 @media (max-width: 480px) {
-  .top-slider { height: 250px; }
+  .top-slider { height: 220px; }
+  .top-slide-image { object-fit: contain; }
   .arrow { font-size: 26px; padding: 8px 12px; }
   .profile-content { margin: 40px auto; padding: 30px 20px; }
   .profile-avatar { width: 110px; height: 110px; }
