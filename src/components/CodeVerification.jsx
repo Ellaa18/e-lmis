@@ -6,6 +6,7 @@ import { supabase } from "../supabase";
 export default function CodeVerification() {
   const [code, setCode] = useState(["", "", "", "", "", ""]);
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false); // new state for delay
   const navigate = useNavigate();
   const inputRefs = useRef([]);
 
@@ -24,6 +25,8 @@ export default function CodeVerification() {
       return;
     }
 
+    setLoading(true); // start loading / delay
+
     const { data, error } = await supabase
       .from("users")
       .select("*")
@@ -32,11 +35,17 @@ export default function CodeVerification() {
 
     if (!data || error) {
       setError("No user found with this code.");
+      setLoading(false); // stop loading
       return;
     }
 
     localStorage.setItem("currentUser", JSON.stringify(data));
-    navigate("/profile");
+
+    // Delay navigation by 1 second
+    setTimeout(() => {
+      navigate("/profile");
+      setLoading(false);
+    }, 1000);
   };
 
   return (
@@ -55,11 +64,18 @@ export default function CodeVerification() {
               maxLength="1"
               onInput={(e) => handleChange(e.target.value, index)}
               autoComplete="one-time-code"
+              disabled={loading} // disable inputs while waiting
             />
           ))}
         </div>
         {error && <p className="error-text">{error}</p>}
-        <button className="submit-btn" onClick={handleSubmit}>Submit</button>
+        <button
+          className="submit-btn"
+          onClick={handleSubmit}
+          disabled={loading} // disable button while waiting
+        >
+          {loading ? "Verifying (wait for a second)..." : "Submit"}
+        </button>
       </div>
     </div>
   );
