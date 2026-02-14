@@ -19,12 +19,15 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 /* Global body and html */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -42,7 +45,7 @@ body {
 
 /* Ensure main content takes remaining space */
 .main-content {
-  flex: 1 0 auto; /* grows to fill remaining space */
+  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
 }
@@ -67,9 +70,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s, background-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -81,18 +86,15 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
     color: #000;
   }
-}
-
-/* Footer always at bottom if content is short */
-footer {
-  flex-shrink: 0;
 }
 
 /* Utility: images max width */
@@ -102,6 +104,8 @@ img {
 }
 
 /* Ensure inputs inherit font */
-input, select, textarea {
+input,
+select,
+textarea {
   font-family: inherit;
 }

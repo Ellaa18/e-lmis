@@ -10,10 +10,11 @@ import MinistrySection from "./components/MinistrySection";
 import Footer from "./components/Footer";
 import AdminPage from "./components/AdminPage";
 import ProfilePage from "./components/ProfilePage";
-
+import ScrollToTop from "./components/ScrollToTop"; // <-- impor
 export default function App() {
   return (
     <div className="app-container">
+      <ScrollToTop />
       <Navbar />
 
       <main className="main-content">
@@ -29,6 +30,7 @@ export default function App() {
                 <FAQSection />
                 <CodeVerification />
                 <MinistrySection />
+                <Footer />
               </>
             }
           />
@@ -39,7 +41,7 @@ export default function App() {
         </Routes>
       </main>
 
-      <Footer />
+      
     </div>
   );
 }

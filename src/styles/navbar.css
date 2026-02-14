@@ -1,7 +1,11 @@
 .navbar {
   width: 100%;
-  background-color: #003366;
+  background-color: #fafbfc;
   padding: 10px 0;
+  position: fixed;   /* stick to top */
+  top: 0;
+  left: 0;
+  z-index: 1000;    /* above everything else */
 }
 
 .navbar-container {
@@ -17,13 +21,10 @@
   height: 50px;             /* bigger logo */
   display: block;
   padding: 10px 0;
- align-items: center; 
+  align-items: center; 
   width: 30%;
-   margin: 0 auto; 
-  
-  
+  margin: 0 auto; 
 }
-
 
 .nav-links {
   list-style: none;
@@ -49,13 +50,4 @@
   color: black;
   padding: 6px 12px;
   border-radius: 4px;
-}
-.navbar {
-  width: 100%;
-  background-color: #fafbfc;
-  padding: 10px 0;
-  position: fixed;   /* stick to top */
-  top: 0;
-  left: 0;
-  z-index: 1000;    /* above everything else */
 }

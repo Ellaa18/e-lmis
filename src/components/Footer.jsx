@@ -1,10 +1,9 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/footer.css";
 
 export default function Footer() {
   const [password, setPassword] = useState("");
-  const inputRef = useRef(null);
   const navigate = useNavigate();
 
   // Navigate only if password is exactly 1234
@@ -13,11 +12,6 @@ export default function Footer() {
       navigate("/admin");
     }
   }, [password, navigate]);
-
-  // Focus input automatically
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
 
   return (
     <footer className="footer-section">
@@ -58,13 +52,11 @@ export default function Footer() {
 
         {/* Admin password input */}
         <input
-          ref={inputRef}
           type="password"
           maxLength={4}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="admin-password-input"
-         
         />
 
         <div className="footer-copy">© 2025 All rights reserved.</div>

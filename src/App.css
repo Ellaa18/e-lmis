@@ -1,30 +1,21 @@
-/* Global root settings */
+/* ===============================
+   GLOBAL ROOT SETTINGS
+=================================*/
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --text-color: #ffffff;
+  --bg-color: #242424;
+  --primary-color: #646cff;
+  --primary-hover: #535bf2;
+  --button-bg: #1a1a1a;
+  --button-hover-border: #646cff;
+  --navbar-height: 70px; /* height of fixed navbar */
 }
 
-/* Links */
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-/* Body */
 body {
   margin: 0;
   padding: 0;
@@ -34,6 +25,8 @@ body {
 
   display: flex;
   flex-direction: column;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* Make root container full height */
@@ -43,19 +36,12 @@ body {
   min-height: 100vh;
 }
 
-/* Main content grows to push footer down */
+/* Main content grows and starts below navbar */
 .main-content {
   flex: 1 0 auto;
-}
-
-/* Navbar styles placeholder */
-nav {
-  flex-shrink: 0;
-}
-
-/* Footer stays at bottom */
-footer {
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--navbar-height);
 }
 
 /* Headings */
@@ -72,13 +58,16 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--button-bg);
+  color: var(--text-color);
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.25s;
 }
+
 button:hover {
-  border-color: #646cff;
+  border-color: var(--button-hover-border);
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -87,6 +76,8 @@ button:focus-visible {
 /* Cards */
 .card {
   padding: 2em;
+  background-color: #1f1f1f;
+  border-radius: 8px;
 }
 
 /* Logo animations */
@@ -96,9 +87,11 @@ button:focus-visible {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em var(--primary-color)aa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -114,6 +107,17 @@ button:focus-visible {
   }
 }
 
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
 /* Read docs link */
 .read-the-docs {
   color: #888;
@@ -122,18 +126,33 @@ button:focus-visible {
 /* Light mode overrides */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --text-color: #213547;
+    --bg-color: #ffffff;
+    --button-bg: #f9f9f9;
+    --button-hover-border: #747bff;
   }
-  a:hover {
-    color: #747bff;
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
   }
+
   button {
-    background-color: #f9f9f9;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+  }
+
+  a:hover {
+    color: var(--button-hover-border);
   }
 }
 
 /* Optional: spacing utilities */
 section {
   padding: 2rem 1rem;
+}
+
+/* Navbar spacing */
+body, #root {
+  padding-top: 70px;
 }

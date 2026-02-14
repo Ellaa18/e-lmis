@@ -1,7 +1,6 @@
 /* ===============================
    SECTION
 =================================*/
-
 .admin-section {
   padding: 20px 15px;
   background: #f4f6f9;
@@ -19,13 +18,12 @@
   font-size: 1.8rem;
   color: #003366;
   margin-bottom: 25px;
-  word-break: break-word; /* prevent overflow on mobile */
+  word-break: break-word;
 }
 
 /* ===============================
    FORM
 =================================*/
-
 .admin-form {
   background: #ffffff;
   padding: 20px;
@@ -42,7 +40,7 @@
   font-size: 0.9rem;
   margin-bottom: 5px;
   display: block;
-  color: #003366; /* ensure labels are visible on mobile */
+  color: #003366;
 }
 
 .form-group input {
@@ -51,15 +49,14 @@
   font-size: 0.95rem;
   border-radius: 6px;
   border: 1px solid #ccc;
-  color: #333;          /* input text visible */
-  background: #fff;     /* white background for contrast */
-  min-height: 38px;     /* mobile-friendly height */
+  color: #333;
+  background: #fff;
+  min-height: 38px;
 }
 
 /* ===============================
    BUTTONS
 =================================*/
-
 .admin-btn {
   padding: 12px;
   font-size: 1rem;
@@ -71,21 +68,16 @@
   cursor: pointer;
   transition: 0.3s;
 }
-
-.admin-btn:hover {
-  background: #0055aa;
-}
+.admin-btn:hover { background: #0055aa; }
 
 /* ===============================
    USERS LIST
 =================================*/
-
 .admin-users h3 {
   margin-bottom: 20px;
   color: #003366;
 }
 
-/* USER CARD */
 .user-card {
   background: white;
   border-radius: 12px;
@@ -105,14 +97,13 @@
 .user-card p {
   font-size: 0.9rem;
   margin: 4px 0;
-  color: #333; /* ensure text is visible on mobile */
-  word-wrap: break-word; /* prevent overflow */
+  color: #333;
+  word-wrap: break-word;
 }
 
 /* ===============================
    DOCUMENT SLIDER
 =================================*/
-
 .document-slider {
   margin-top: 15px;
   text-align: center;
@@ -157,7 +148,6 @@
   border-radius: 6px;
   cursor: pointer;
 }
-
 .slider-remove button:hover { background: #c82333; }
 
 .add-doc-btn {
@@ -170,17 +160,15 @@
   font-size: 0.9rem;
   cursor: pointer;
 }
-
 .add-doc-btn:hover { background: #0056b3; }
 
 /* ===============================
    ACTION BUTTONS
 =================================*/
-
 .user-actions {
   margin-top: 15px;
   display: flex;
-  flex-direction: column;   /* MOBILE FIRST */
+  flex-direction: column;
   gap: 8px;
 }
 
@@ -191,11 +179,10 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 0.85rem; /* mobile-friendly */
-  color: white;       /* ensure button text is visible */
+  font-size: 0.85rem;
+  color: white;
 }
 
-/* Button Colors */
 .accept-btn { background: #28a745; }
 .accept-btn:hover { background: #218838; }
 
@@ -209,15 +196,13 @@
 .delete-btn:hover { background: #5a6268; }
 
 /* ===============================
-   DESKTOP IMPROVEMENT
+   DESKTOP IMPROVEMENTS
 =================================*/
-
 @media (min-width: 768px) {
-
   .admin-title { font-size: 2.2rem; }
 
   .user-actions {
-    flex-direction: row;  /* horizontal on desktop */
+    flex-direction: row;
     flex-wrap: wrap;
   }
 
@@ -231,5 +216,4 @@
     max-width: 260px;
     height: 260px;
   }
-
 }

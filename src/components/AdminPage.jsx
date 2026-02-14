@@ -16,7 +16,6 @@ export default function AdminPage() {
   const [editingIndex, setEditingIndex] = useState(null);
   const [currentSlide, setCurrentSlide] = useState({});
 
-  // Load saved users
   useEffect(() => {
     const savedUsers = JSON.parse(localStorage.getItem("users")) || [];
     setUsers(savedUsers);
@@ -143,7 +142,6 @@ export default function AdminPage() {
         <div className="admin-container">
           <h2 className="admin-title">Admin User Panel</h2>
 
-          {/* Add/Edit Form */}
           <form className="admin-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Full Name</label>
@@ -180,7 +178,6 @@ export default function AdminPage() {
             </button>
           </form>
 
-          {/* Users List */}
           <div className="admin-users">
             <h3>Registered Users</h3>
             {users.length === 0 && <p style={{ color: "gray" }}>No users registered yet.</p>}
@@ -209,7 +206,6 @@ export default function AdminPage() {
                   </span>
                 </p>
 
-                {/* Document Slider */}
                 <div className="document-slider">
                   {user.documents && user.documents.length > 0 && (
                     <>
@@ -232,7 +228,6 @@ export default function AdminPage() {
                     </>
                   )}
 
-                  {/* Add Picture Button */}
                   <label className="add-doc-btn">
                     + Add Picture
                     <input
