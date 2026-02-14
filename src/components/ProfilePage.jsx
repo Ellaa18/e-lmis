@@ -79,9 +79,7 @@ export default function ProfilePage() {
           <p><strong>Email:</strong> {user.email || "N/A"}</p>
         </div>
 
-        <button className="exit-btn" onClick={() => navigate("/verify")}>
-          Exit
-        </button>
+        
       </div>
     </div>
   );
