@@ -61,10 +61,11 @@
 .read-more {
   color: #ffcc00;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid #ffcc00;
   padding: 8px 20px;
   border-radius: 6px;
+   font-size: 0.7rem;
 }
 
 .read-more:hover {
